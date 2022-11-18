@@ -35,8 +35,10 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <Header />
+        <div className="App">
         <Body />
         <Footer />
+        </div>
       </ThemeProvider>
     </div>
   );

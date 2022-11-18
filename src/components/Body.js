@@ -9,14 +9,15 @@ import copy from 'copy-to-clipboard';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import qrcode from 'qrcode-generator'
-
+import AddLinkIcon from '@mui/icons-material/AddLink';
+import IconButton from '@mui/material/IconButton';
 
 const Alert = forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
 const Body = () => {
-    const [link, setLink] = useState('Здесь появится ваша ссылка')
+    const [link, setLink] = useState('ЗДЕСЬ ПОЯВИТСЯ ВАША ССЫЛКА')
     const [open, setOpen] = useState(false);
     const [snackbar, setSnackbar] = useState('');
     const [severity, setSeverity] = useState('');
@@ -70,7 +71,14 @@ const Body = () => {
     return <div className="main">
         <div className='main-input'>
             <TextField id="standard-basic" label="Ваша ссылка" variant="standard"/>
-            <Button style={{marginLeft: 10}} variant="outlined" color="success" onClick={newLink}>Сократить</Button>
+            <IconButton
+                size="large"
+                edge="end"
+                color="inherit"
+                aria-label="menu"
+                onClick={newLink}  >
+            <AddLinkIcon fontSize='large' />
+            </IconButton>
         </div>
         <div className='link-result'>
         <div id="placeHolder" className='placeHolder'></div>
