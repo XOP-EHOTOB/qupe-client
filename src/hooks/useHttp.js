@@ -5,7 +5,7 @@ const request = async (url, method = 'GET', body = null, headers = {}) => {
         headers['Content-Type'] = 'application/json'
       }
       
-      const responce = await fetch((process.env.NODE_ENV === 'development' ? 'https://localhost:777/' :  'https://qupe.pw:777/')  + url, {
+      const responce = await fetch((process.env.NODE_ENV === 'development' ? 'https://localhost:111/' :  'https://qupe.pw:111/')  + url, {
         method,
         body,
         headers,
