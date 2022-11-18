@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Body from './components/Body';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useEffect, useState } from 'react';
+import request from './hooks/useHttp'
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 function App() {
+  const [loading, setLoading] = useState(true)
+  
+  useEffect(() => {
+    const redirect = async () => {
+      if (window.location.pathname.length > 5) {
+        let data = await request('api/link/get_link', "POST", {
+          from: window.location.pathname.slice(1)
+        })
+        if (data.link) return window.location.href = data.link.from
+       }
+       setLoading(false)
+    }
+
+    redirect()
+  }, [])
+
+  if (loading) return <div></div>
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Body />
+        <Footer />
+      </ThemeProvider>
     </div>
   );
 }

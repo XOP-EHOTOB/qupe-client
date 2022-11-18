@@ -1,0 +1,42 @@
+.main {
+  padding: 10px;
+}
+
+.main-input {
+    display: grid;
+    padding: 20px;
+    max-width: 600px;
+    grid-template-columns: 1fr 120px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-info {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: justify;
+}
+
+.link-result {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    max-width: 580px;
+    margin: 20px auto;
+    border: solid 1px white;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeHolder {
+   display: grid;
+   align-items: center;
+   justify-content: center;
+}
+
+.placeHolder > img {
+    border-radius: 10px;
+    margin: 0 auto;
+}
