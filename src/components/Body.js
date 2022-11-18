@@ -38,7 +38,7 @@ const Body = () => {
             let url = await request('api/link/generate', "POST", {
                 from: item.value
             })
-            setLink(<div>
+            setLink(<div className='result'>
             <p>Ваша ссылка: {item.value}</p>
             <p>Сокращение: {url.link.to}</p>
             <Button variant="outlined" startIcon={<ContentCutIcon />} onClick={() => {
