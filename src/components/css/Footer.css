@@ -7,3 +7,14 @@
 .footer > a {
     color: antiquewhite;
 }
+
+.bottom {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    padding-bottom: 20px;
+}
+
+.bottom > a {
+    margin: 10px; 
+}

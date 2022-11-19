@@ -1,14 +1,21 @@
 .main {
   padding: 10px;
+  margin: auto auto;
 }
 
-.result > p{
-    width: calc(100% - 10px);
+.result {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.result > p {
     word-break:break-all;
 }
 
 .main-input {
     display: grid;
+    width: 100%;
     max-width: 400px;
     grid-template-columns: 1fr 60px;
     margin: 0 auto;
@@ -25,7 +32,6 @@
 
 .link-result {
     display: grid;
-    grid-template-columns: 100px 1fr;
     max-width: 580px;
     margin: 20px auto;
     border: solid 1px white;
@@ -44,4 +50,11 @@
 .placeHolder > img {
     border-radius: 10px;
     margin: 0 auto;
+}
+
+.button {
+    margin: 20px auto 10px auto;
+    text-align: center;
+    cursor: pointer;
+    color: antiquewhite;
 }

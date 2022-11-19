@@ -4,8 +4,9 @@ const request = async (url, method = 'GET', body = null, headers = {}) => {
         body = JSON.stringify(body)
         headers['Content-Type'] = 'application/json'
       }
+      headers['Access-Control-Allow-Origin'] = '*'
       
-      const responce = await fetch((process.env.NODE_ENV === 'development' ? 'https://localhost:455/' :  'https://qupe.pw:455/')  + url, {
+      const responce = await fetch((process.env.NODE_ENV === 'development' ? 'https://localhost:455' :  'https://qupe.pw:455')  + url, {
         method,
         body,
         headers,

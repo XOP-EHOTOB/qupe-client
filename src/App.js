@@ -18,9 +18,7 @@ function App() {
   useEffect(() => {
     const redirect = async () => {
       if (window.location.pathname.length > 5) {
-        let data = await request('api/link/get_link', "POST", {
-          from: window.location.pathname.slice(1)
-        })
+        let data = await request('/get_link' + window.location.pathname, "GET")
         if (data.link) return window.location.href = data.link.from
        }
        setLoading(false)
@@ -35,10 +33,8 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <Header />
-        <div className="App">
         <Body />
         <Footer />
-        </div>
       </ThemeProvider>
     </div>
   );

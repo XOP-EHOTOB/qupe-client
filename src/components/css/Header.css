@@ -1,5 +1,51 @@
 .header {
     background-color: #191c22;
     text-align: center;
-    padding: 20px
+    height: 20vh;
+    padding: 20px;
+    background-image: url(/src/fon.png);
+    background-position: center;
+    background-size: 100%;
+    opacity: 0.8;
+    max-width: 1028px;
+    margin: 0 auto;
+    border-radius: 0 0 20px 20px;
 }
+
+@media (max-width: 600px) {
+    .header {
+        background-size: 120%;
+        height: 15vh;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .header {
+        background-size: 120%;
+        height: 15vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        background-size: 140%;
+        height: 15vh;
+    }
+}
+
+@media (max-width: 400px) {
+    .header {
+        background-size: 160%;
+        height: 15vh;
+    }
+}
+
+@media (max-width: 300px) {
+    .header {
+        background-size: 190%;
+        height: 15vh;
+    }
+}
+
+
